@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <style>
+        /* Set the height of the carousel-inner */
+        .carousel-inner {
+            height: 500px;
+            /* Adjust this value according to your requirements */
+        }
+    </style>
+
+    <!-- this link for list view -->
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
+    <!-- this link for list view -->
+
+
+    <!-- this link for card  view -->
+    <link rel="stylesheet" href="/stylesheets/style2.css">
+    <!-- this link for card  view -->
+
+    <!-- custom css -->
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    <!-- <script src="/javascripts/script.js"></script> -->
+
+
+</head>
+
+<body>
+
+    <!------------------------ Card view code starting --------------------------- -->
+
+
+    <div class="main-container">
+        <div class="header">
+            <nav class="box ">
+                <div class="logo">
+                    <span class="heading">Ticket Booking</span>
+                </div>
+                <div class="search-box ">
+                    <input type="text" class="form-control control-box" id="search-tab" placeholder="Search For Movies"
+                        name="search-tab" onkeyup="search()">
+                </div>
+            </nav>
+        </div>
+        <main>
+            <section>
+                <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel"
+                    data-bs-interval="1500">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/1.jpg" class="d-block w-100 img" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/2.jpg" class="d-block w-100 img" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/3.jpg" class="d-block w-100 img" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next..................</span>
+                    </button>
+                </div>
+            </section>
+            <section class="sec1" >
+
+
+                <% data.map((item, index)=>
+                    { %>
+                    <div class="card"
+                        style="background-image: url(/images/<%=item.picture%>); background-size: cover; background-repeat: no-repeat; background-position: center;  margin-right: 10px; margin-bottom: 10px; margin-top: 50px;">
+                        <div class="car" id="car">
+                            <tr>
+                                <td><a
+                                        href="/cinema/display_movie_by_id?movieid=<%=item.movieid%>&moviename=<%=item.moviename%>&picture=<%=item.picture%>"><img
+                                            src="/images/<%=item.picture%>" class="card"></a></td>
+                                <h2 class="description" id="movie">
+                                    <%=item.moviename%>
+                                </h2>
+                                <h3>Action/Thriller</h3>
+                            </tr>
+                        </div>
+                    </div>
+
+                    <% }) %>
+
+
+            </section>
+        </main>
+        <footer class="foot">
+            <div class=" box">
+                <p>Copyright 2023 © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <!------------------------ Card view code Ending --------------------------- -->
+
+
+
+
+
+    <!------------------------ list view code starting --------------------------- -->
+
+
+
+    <!-- <div class="main-container">
+        <div class="box-movies">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-capitalize heading center">
+                        <img src="/images/pop.png" width="60" style="filter: drop-shadow(10px 10px 10px black);">
+                        <span class="heading" style="padding-left:10px ;">Ticket Booking</span>
+                        <a href="/cinema/cinemainterface" style="margin-left: auto; cursor: pointer;"><img
+                                src="/images/add-movie-icon.png" width="70"></a>
+                    </div>
+
+
+                </div>
+                <div class="row ">
+                    <div class="col-12 ">
+                        <hr style="height: 1px; border: none; background-color: rgb(74, 14, 14);">
+                    </div>
+                </div>
+                <% if ( status) { %>
+
+                    <table border="1" cellspacing="0" class="table table-striped ">
+                        <caption class="text-capitalize">
+                            List of movies
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th>sn</th>
+                                <th>State</th>
+                                <th>City</th>
+                                <th>Cinema</th>
+                                <th>Screen</th>
+                                <th>Movie Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Release Date</th>
+                                <th>Picture</th>
+                                <th>Update</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.map((item, index)=>
+                                { %>
+
+                                <tr>
+                                    <td>
+                                        <%=(index+1)%>
+                                    </td>
+                                    <td>
+                                        <%=item.stateid%>/<br><%=item.statename%>
+                                    </td>
+                                    <td> <%=item.cityid%>/<br><%=item.cityname%></td>
+                                    <td> <%=item.cinemaid%>/<br><%=item.cinemaname%></td>
+                                    <td> <%=item.screenid%>/<br><%=item.screenname%></td>
+                                    <td> <%=item.moviename%></td>
+                                    <td> <%=item.description%></td>
+                                    <td> <%=item.price%></td>
+                                    <td> <%=item.status%></td>
+                                    <td> <%=item.releasedate%></td>
+                                    <td><a href="/cinema/show_image?movieid=<%=item.movieid%>&moviename=<%=item.moviename%>&picture=<%=item.picture%>" style="cursor: pointer;"><img src="/images/<%=item.picture%>" width="30"></a> </td>
+                                    <td><a href="/cinema/display_product_by_id?movieid=<%=item.movieid%>" style="cursor: pointer; text-decoration: none; color: green;">Edit/Delete</a></td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+
+                    <% } else { %>
+
+                        <%=message %>
+
+                            <% } %>
+                                
+            </div>
+        </div>
+    </div> -->
+
+    <!------------------------ list view code ending --------------------------- -->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        // for search bar 
+        const search = () => {
+            let svalue = document.getElementById('search-tab').value.toUpperCase(); // Corrected this line
+            console.log(svalue);
+
+            let tr = document.getElementById('car');
+            console.log(tr);
+
+        }
+    </script>
+
+</body>
+
+
+</html
