@@ -1,0 +1,154 @@
+
+
+ /*--------------- for display all movies  in card view ------------- */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Permanent+Marker&family=Urbanist:wght@200;400&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nosifer&family=Permanent+Marker&family=Urbanist:wght@200;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nosifer&family=Permanent+Marker&family=Playpen+Sans:wght@300&family=Urbanist:wght@200;400&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kenia&family=Lobster&family=Nosifer&family=Permanent+Marker&family=Playpen+Sans:wght@300&family=Urbanist:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kenia&family=Lobster&family=Nosifer&family=Oswald&family=Permanent+Marker&family=Playpen+Sans:wght@300&family=Roboto&family=Urbanist:wght@200;400&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+
+}
+
+.box {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 15px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* .header .logo span{
+    font-size: 3rem;
+    color: #461515;
+    font-weight: 700;
+    font-family: cursive;
+} */
+
+.header {
+    box-shadow: 3px 3px 18px 3px rgb(103, 103, 103);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-image: linear-gradient(to top left, #461515, #21136e)
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Nosifer', sans-serif;
+}
+
+.search-box {
+    margin-top: 10px;
+    /* Adjust the top margin as needed */
+}
+
+.control-box {
+    width: 400px;
+    /* Adjust the width of the input field as needed */
+    padding: 5px;
+    /* Adjust the padding as needed */
+    box-sizing: border-box;
+    /* Include padding and border in the 
+    element's total width and height */
+    font-size: 1.5rem;
+    font-family: 'Playpen Sans', cursive;
+}
+
+/* main{
+    /* background-color: rgb(189, 185, 185); */
+
+
+.sec1 {
+    /* background-color: aqua; */
+    padding: 80px;
+    /* padding-left: 50px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 80px;
+
+
+}
+
+.sec1 .card {
+    width: 250px;
+    height: 320px;
+    background-color: red;
+    background-position: center;
+    border: none;
+    box-shadow: 2px -4px 6px 1px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    /* padding: 50px; */
+    /* margin-bottom: 100px; */
+    /* overflow: hidden; */
+}
+
+.card:hover {
+    /* background-position: bottom; */
+    /* background-blend-mode: normal; */
+    box-shadow: 4px 4px 10px rgb(0, 0, 0);
+    transform: scale(1.1);
+
+}
+
+.description {
+    /* background-color: red; */
+    text-align: center;
+    padding: 15px 15px;
+    font-family: 'Playpen Sans', cursive;
+    font-weight: 900;
+
+}
+
+.foot {
+    background-image: linear-gradient(to top left, #461515, #21136e);
+    /* padding: 10px 0px; */
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    font-family: 'Playpen Sans', cursive;
+
+}
+
+h3{
+    text-align: center;
+    padding: 0px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size:16px;
+    color: rgb(158, 155, 155);
+}
+
